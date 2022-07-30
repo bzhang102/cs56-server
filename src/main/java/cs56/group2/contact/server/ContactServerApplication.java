@@ -1,6 +1,6 @@
 package cs56.group2.contact.server;
 
-import cs56.group2.contact.server.model.Contact;
+import cs56.group2.contact.server.model.SimpleContact;
 import cs56.group2.contact.server.repository.ContactRepository;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,27 +28,27 @@ public class ContactServerApplication implements CommandLineRunner {
         LOGGER.info("Application started");
         LOGGER.info("prepopulate some contact for demonstration purpose");
 
-        Contact contact1 = new Contact();
-        contact1.setFirstName("Brandon");
-        contact1.setLastName("Zhang");
-        contact1.setCell("424-000-0001");
-        contact1.setEmail("yuxiang.brandon.zhang@gmail.com");
-        contact1.setMiddleName("");
+        SimpleContact simpleContact1 = new SimpleContact();
+        simpleContact1.setFirstName("Brandon");
+        simpleContact1.setLastName("Zhang");
+        simpleContact1.setCell("424-000-0001");
+        simpleContact1.setEmail("yuxiang.brandon.zhang@gmail.com");
+        simpleContact1.setMiddleName("");
 
-        Contact contact2 = new Contact();
-        contact2.setFirstName("Chris");
-        contact2.setLastName("Smith");
-        contact2.setCell("424-000-0002");
-        contact2.setEmail("chris.smith@gmail.com");
-        contact2.setMiddleName("Jackson");
+        SimpleContact simpleContact2 = new SimpleContact();
+        simpleContact2.setFirstName("Chris");
+        simpleContact2.setLastName("Smith");
+        simpleContact2.setCell("424-000-0002");
+        simpleContact2.setEmail("chris.smith@gmail.com");
+        simpleContact2.setMiddleName("Jackson");
 
-        List<Contact> contacts = new ArrayList<>();
-        contacts.add(contact1);
-        contacts.add(contact2);
+        List<SimpleContact> simpleContacts = new ArrayList<>();
+        simpleContacts.add(simpleContact1);
+        simpleContacts.add(simpleContact2);
 
-        contactRepository.saveAll(contacts);
+        contactRepository.saveAll(simpleContacts);
 
-        LOGGER.info("successfully prepopulate following contacts to H2 database {}", contacts);
+        LOGGER.info("successfully prepopulate following contacts to H2 database {}", simpleContacts);
 
     }
 
